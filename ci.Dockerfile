@@ -2,15 +2,11 @@
 
 FROM mirrors.tencent.com/ci/tlinux3_ci:latest
 
-ENV HOME=/root
-
-ARG JAVA_BIN=/etc/alternatives/jre_openjdk/bin
-ARG NODE_BIN=/usr/local/node/bin
-ARG DENO_BIN=/usr/local/deno/bin
+ARG HOME=/root
 # 固定安装1.37.0
 ARG DENO_VERSION=1.37.0
 
-COPY .inputrc .gitconfig install_node.sh install_deno.sh ${HOME}/
+COPY .gitconfig install_node.sh install_deno.sh ${HOME}/
 
 RUN dnf -y upgrade && \
     # 安装java
@@ -23,7 +19,7 @@ RUN dnf -y upgrade && \
     bash ${HOME}/install_deno.sh
 
 # 设置PATH
-ENV PATH="${JAVA_BIN}:${NODE_BIN}:${DENO_BIN}:${PATH}"
+ENV PATH="/etc/alternatives/jre_openjdk/bin:/usr/local/node/bin:/usr/local/deno/bin:${PATH}"
 
 # deno降级
 RUN deno upgrade --version ${DENO_VERSION}

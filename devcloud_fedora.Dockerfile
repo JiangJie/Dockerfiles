@@ -3,8 +3,6 @@ FROM registry.fedoraproject.org/fedora-minimal:latest as base
 
 ARG HOME=/root
 ARG TMP_DIR=/data/temp
-ARG CODEV_BIN=/codev/bin
-ARG CODEV_BIN_RUN=${CODEV_BIN}/run
 
 COPY home/.bash_profile \
     home/.bashrc \
@@ -14,6 +12,7 @@ COPY home/.bash_profile \
     ${HOME}/
 COPY env/99-codev.conf /etc/ssh/sshd_config.d/
 COPY env/mkpasswd.sh ${TMP_DIR}/
+COPY codev/bin/run /codev/bin/
 
 RUN dnf5 -y upgrade && \
     # 安装必要软件包 git java .net
@@ -26,11 +25,6 @@ RUN bash ${HOME}/install_node.sh
 
 # 安装deno
 RUN bash ${HOME}/install_deno.sh
-
-# 下载codev
-RUN mkdir -p ${CODEV_BIN} && \
-    wget -q -O ${CODEV_BIN_RUN} https://mirrors.tencent.com/repository/generic/codev/run && \
-    chmod +x ${CODEV_BIN_RUN}
 
 # 远程开发登录需要
 RUN ssh-keygen -A

@@ -5,6 +5,7 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
+# auto ssh-add public keys
 if [ -z "$SSH_AUTH_SOCK" ]; then
     eval "$(ssh-agent -s)" > /dev/null
 
@@ -18,4 +19,5 @@ fi
 
 # User specific environment and startup programs
 
+# add node and deno
 export PATH=/usr/local/node/bin:/usr/local/deno/bin:$PATH

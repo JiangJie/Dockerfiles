@@ -30,3 +30,5 @@
     p10 = plog -10
     sur = submodule update --remote
     ca = commit --amend --no-edit
+[url "git://"]
+	insteadOf = https://

@@ -32,3 +32,5 @@
     ca = commit --amend --no-edit
 [url "git://"]
 	insteadOf = https://
+[core]
+	editor = vim

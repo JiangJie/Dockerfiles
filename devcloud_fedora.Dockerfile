@@ -16,7 +16,7 @@ COPY codev/bin/run /codev/bin/
 
 RUN dnf5 -y upgrade && \
     # 安装必要软件包 git java .net
-    dnf5 -y install which passwd wget openssh-server jq tar xz zip unzip git git-lfs java-latest-openjdk dotnet-sdk-8.0 && \
+    dnf5 -y install which passwd wget openssh-server jq tar xz zip unzip git git-lfs java-latest-openjdk dotnet-sdk-8.0 vim && \
     dnf5 -y autoremove && \
     dnf5 -y clean all
 

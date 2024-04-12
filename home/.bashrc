@@ -11,3 +11,9 @@ fi
 # User specific aliases and functions
 
 alias ll='ls -al --color=auto'
+
+# add node and deno
+export PATH=/usr/local/node/bin:/usr/local/deno/bin:$PATH
+
+. "$HOME/.cargo/env"
+/usr/bin/nu

@@ -18,6 +18,3 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 # User specific environment and startup programs
-
-# add node and deno
-export PATH=/usr/local/node/bin:/usr/local/deno/bin:$PATH

@@ -1,4 +1,5 @@
 # mirrors.tencent.com/jarvisjiang/devcloud_fedora:latest
+
 FROM registry.fedoraproject.org/fedora-minimal:latest as base
 
 ARG HOME=/root
@@ -9,6 +10,7 @@ COPY home/.bash_profile \
     home/.gitconfig \
     home/install_node.sh \
     home/install_deno.sh \
+    home/install_bun.sh \
     ${HOME}/
 COPY env/99-codev.conf /etc/ssh/sshd_config.d/
 COPY env/mkpasswd.sh ${TMP_DIR}/
@@ -16,9 +18,11 @@ COPY codev/bin/run /codev/bin/
 
 RUN dnf5 -y upgrade && \
     dnf5 -y install dnf5-plugins && \
-    # 安装nushell
+    # 为了安装nushell
     dnf5 -y copr enable atim/nushell && \
-    dnf5 -y install which passwd wget openssh-server jq tar xz zip unzip vim nushell \
+    dnf5 -y install which passwd wget openssh-server \
+    jq tar xz zip unzip lsof vim \
+    nushell \
     # 安装必要软件包 git java .net rustup
     git git-lfs \
     java-latest-openjdk dotnet-sdk-8.0 rustup && \
@@ -33,6 +37,9 @@ RUN bash ${HOME}/install_node.sh
 
 # 安装deno
 RUN bash ${HOME}/install_deno.sh
+
+# 安装bun
+RUN bash ${HOME}/install_bun.sh
 
 # 远程开发登录需要
 RUN ssh-keygen -A

@@ -13,7 +13,7 @@ fi
 alias ll='ls -al --color=auto'
 
 # add node and deno
-export PATH=/usr/local/node/bin:/usr/local/deno/bin:$PATH
+export PATH=/usr/local/node/bin:/usr/local/deno/bin:/usr/local/bun/bin:$PATH
 
 . "$HOME/.cargo/env"
 /usr/bin/nu

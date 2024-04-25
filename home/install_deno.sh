@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if command -v deno >/dev/null; then
+    echo "Deno is already installed. Run 'deno upgrade' to upgrade to the latest version."
+    exit
+fi
+
 DENO_BIN=/usr/local/deno/bin
 DENO_TMP=~/deno.zip
 

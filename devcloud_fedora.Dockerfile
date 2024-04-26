@@ -25,7 +25,7 @@ RUN dnf5 -y upgrade && \
     nushell \
     # 安装必要软件包 git java .net rustup
     git git-lfs \
-    java-latest-openjdk dotnet-sdk-8.0 rustup && \
+    java-latest-openjdk dotnet-sdk-8.0 gcc rustup && \
     dnf5 -y autoremove && \
     dnf5 -y clean all
 

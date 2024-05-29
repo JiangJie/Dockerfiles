@@ -12,3 +12,7 @@ echo url=${url}
 wget -q -O - ${url} | tar -xJ --strip-component=1 --one-top-level=${NODE_DIR}
 
 ${NODE_DIR}/bin/node --version
+
+# 更新npm
+# 安装pnpm
+${NODE_DIR}/bin/node ${NODE_DIR}/bin/npm install -g npm@latest pnpm@latest

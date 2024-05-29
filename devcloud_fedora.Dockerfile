@@ -41,9 +41,6 @@ RUN bash ${HOME}/install_deno.sh
 # 安装bun
 RUN bash ${HOME}/install_bun.sh
 
-# 安装pnpm
-RUN npm install --global pnpm
-
 # 远程开发登录需要
 RUN ssh-keygen -A
 RUN echo "$($TMP_DIR/mkpasswd.sh)" | passwd root --stdin && \

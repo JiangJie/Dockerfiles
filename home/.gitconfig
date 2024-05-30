@@ -33,4 +33,4 @@
 [url "ssh://git@"]
 	insteadOf = https://
 [core]
-	editor = vim
+	editor = code --wait

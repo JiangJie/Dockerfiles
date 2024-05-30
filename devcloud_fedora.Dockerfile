@@ -8,6 +8,7 @@ ARG TMP_DIR=/data/temp
 COPY home/.bash_profile \
     home/.bashrc \
     home/.gitconfig \
+    home/ssh_add.sh \
     home/install_node.sh \
     home/install_deno.sh \
     home/install_bun.sh \

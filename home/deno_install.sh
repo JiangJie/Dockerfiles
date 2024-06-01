@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v deno >/dev/null; then
     echo "Deno is already installed. Run 'deno upgrade' to upgrade to the latest version."

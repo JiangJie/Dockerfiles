@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v bun >/dev/null; then
     echo "Bun is already installed. Run 'bun upgrade' to upgrade to the latest version."

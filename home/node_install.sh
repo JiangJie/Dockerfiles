@@ -1,13 +1,20 @@
-#!/bin/bash
-
-NODE_DIR=/usr/local/node
+#!/bin/sh
 
 # parse json
 version=$(curl -fsSL https://nodejs.org/dist/index.json | jq -r '.[0].version')
-echo version=${version}
+echo "Latest Node.js version = ${version}."
+
+if command -v node >/dev/null; then
+    if [ $(node --version) = ${version} ]; then
+        echo "Node.js ${version} is already installed."
+        exit
+    fi
+fi
 
 url=https://nodejs.org/dist/${version}/node-${version}-linux-x64.tar.xz
 echo url=${url}
+
+NODE_DIR=/usr/local/node
 
 wget -q -O - ${url} | tar -xJ --strip-component=1 --one-top-level=${NODE_DIR}
 

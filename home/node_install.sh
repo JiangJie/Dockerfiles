@@ -16,7 +16,7 @@ echo url=${url}
 
 NODE_DIR=/usr/local/node
 
-wget -q -O - ${url} | tar -xJ --strip-component=1 --one-top-level=${NODE_DIR}
+wget -t 5 -q -O - ${url} | tar -xJ --strip-component=1 --one-top-level=${NODE_DIR}
 
 ${NODE_DIR}/bin/node --version
 

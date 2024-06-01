@@ -11,7 +11,7 @@ BUN_TMP=~/bun.zip
 
 TARGET=bun-linux-x64
 
-wget -q -O ${BUN_TMP} https://github.com/oven-sh/bun/releases/latest/download/${TARGET}.zip && \
+wget -t 5 -q -O ${BUN_TMP} https://github.com/oven-sh/bun/releases/latest/download/${TARGET}.zip && \
 mkdir -p ${BUN_ROOT} && \
 unzip -q ${BUN_TMP} -d ${BUN_ROOT} && \
 mv ${BUN_ROOT}/${TARGET} ${BUN_BIN} && \

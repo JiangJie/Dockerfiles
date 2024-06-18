@@ -15,18 +15,20 @@
     pl = pull
     rb = rebase
     rc = rebase --continue
+    rk = rebase --skip
     rb-sh = rebase --autostash
     lr = ls-remote
     reseth = reset --hard
     cp = cherry-pick
     cc = cherry-pick --continue
+    ck = cherry-pick --skip
     sh = stash
     sp = stash pop
     sm = submodule
     pf = push --force-with-lease
-    plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ai %C(green)%aN%C(reset) %s'
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    slog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+    plog = log --graph --abbrev=10 --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ai %C(green)%aN%C(reset) %s'
+    lg = log --color --graph --abbrev=10 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    slog = log --stat --since='1 Day Ago' --graph --abbrev=10 --pretty=oneline --abbrev-commit --date=relative
     p10 = plog -10
     sur = submodule update --remote
     ca = commit --amend --no-edit
@@ -34,3 +36,5 @@
 	insteadOf = https://
 [core]
 	editor = code-insiders --wait
+[credential]
+	helper = store

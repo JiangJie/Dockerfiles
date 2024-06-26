@@ -4,7 +4,7 @@ FROM mirrors.tencent.com/ci/tlinux3_ci:latest
 
 ARG HOME=/root
 
-COPY home/.gitconfig home/node_install.sh home/deno_install.sh ${HOME}/
+COPY home/node_install.sh home/deno_install.sh ${HOME}/
 
 RUN dnf -y upgrade && \
     # 安装java

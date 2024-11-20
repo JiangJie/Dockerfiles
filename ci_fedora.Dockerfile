@@ -9,9 +9,9 @@ COPY profile.d/alias.sh profile.d/bun.sh profile.d/deno.sh profile.d/node.sh /et
 
 RUN dnf5 -y upgrade && \
     dnf5 -y install which wget openssl-devel procps-ng jq tar xz zip unzip lsof vim \
-    # 安装必要软件包 git java gcc
+    # 安装必要软件包 git java gcc pip
     git git-lfs \
-    java-latest-openjdk gcc && \
+    java-latest-openjdk gcc python3-pip && \
     dnf5 -y autoremove && \
     dnf5 -y clean all && \
     # 忽略大小写

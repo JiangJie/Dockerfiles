@@ -11,9 +11,11 @@ RUN dnf5 -y upgrade && \
     dnf5 -y install which wget openssl-devel procps-ng jq tar xz zip unzip lsof vim \
     # 安装必要软件包 git java gcc pip
     git git-lfs \
-    java-latest-openjdk gcc python3-pip && \
+    java-latest-openjdk gcc python3.6 python3-pip && \
     dnf5 -y autoremove && \
     dnf5 -y clean all && \
+    # 修改python3为v3.6
+    ln -sf python3.6 /usr/bin/python3 && \
     # 忽略大小写
     echo "set completion-ignore-case on" >> /etc/inputrc && \
     # 安装rust

@@ -6,6 +6,8 @@ ARG HOME=/root \
     TMP_DIR=/data/temp
 
 COPY home/* ${HOME}/
+# 此处不需要
+RUN rm -rf ${HOME}/pip.conf
 COPY profile.d/* /etc/profile.d/
 COPY env/99-codev.conf /etc/ssh/sshd_config.d/
 COPY env/mkpasswd.sh ${TMP_DIR}/

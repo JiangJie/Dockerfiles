@@ -8,7 +8,8 @@ COPY home/node_install.sh home/deno_install.sh ${HOME}/
 
 RUN dnf -y upgrade && \
     # 安装java
-    dnf -y install jq java-latest-openjdk && \
+    dnf -y install jq \
+    java-latest-openjdk && \
     dnf -y autoremove && \
     dnf -y clean all && \
     # 忽略大小写

@@ -2,8 +2,8 @@
 
 FROM registry.fedoraproject.org/fedora-minimal:latest as base
 
-ARG HOME=/root \
-    TMP_DIR=/data/temp
+ARG HOME=/root
+ARG TMP_DIR=/data/temp
 
 COPY home/* ${HOME}/
 # 此处不需要

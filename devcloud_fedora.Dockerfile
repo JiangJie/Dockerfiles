@@ -38,6 +38,9 @@ RUN dnf5 -y upgrade && \
     # 安装bun
     bash ${HOME}/bun_install.sh
 
+# 设置时区
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 # 空白镜像
 FROM scratch
 COPY --from=base / /

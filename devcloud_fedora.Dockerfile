@@ -1,6 +1,6 @@
 # mirrors.tencent.com/jarvisjiang/devcloud_fedora:latest
 
-FROM registry.fedoraproject.org/fedora-minimal:latest as base
+FROM quay.io/fedora/fedora-minimal:latest as base
 
 ARG HOME=/root
 ARG TMP_DIR=/data/temp

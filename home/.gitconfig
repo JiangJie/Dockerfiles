@@ -32,6 +32,8 @@
     p10 = plog -10
     sur = submodule update --remote
     ca = commit --amend --no-edit
+    wt = worktree
+    b2 = bisect
 [url "ssh://git@"]
 	insteadOf = https://
 [core]

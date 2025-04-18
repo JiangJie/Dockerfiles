@@ -9,14 +9,12 @@ COPY home/* ${HOME}/
 # 此处不需要
 RUN rm -rf ${HOME}/pip.conf
 COPY profile.d/* /etc/profile.d/
+COPY yum.repos.d/* /etc/yum.repos.d/
 COPY env/99-codev.conf /etc/ssh/sshd_config.d/
 COPY env/mkpasswd.sh ${TMP_DIR}/
 COPY codev/bin/run /codev/bin/
 
 RUN dnf5 -y upgrade && \
-    dnf5 -y install dnf5-plugins && \
-    # 为了安装nushell
-    dnf5 -y copr enable atim/nushell && \
     dnf5 -y install which passwd wget openssh-server openssl-devel procps-ng jq tar xz zip unzip lsof vim nushell \
     # 安装必要软件包 git java .net golang gcc
     git git-lfs \

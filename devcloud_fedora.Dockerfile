@@ -18,9 +18,9 @@ RUN dnf5 -y upgrade && \
     # 为了安装nushell
     dnf5 -y copr enable atim/nushell && \
     dnf5 -y install which passwd wget openssh-server openssl-devel procps-ng jq tar xz zip unzip lsof vim nushell \
-    # 安装必要软件包 git java .net gcc
+    # 安装必要软件包 git java .net golang gcc
     git git-lfs \
-    java-latest-openjdk dotnet-sdk-9.0 gcc && \
+    java-latest-openjdk dotnet-sdk-9.0 golang gcc && \
     dnf5 -y autoremove && \
     dnf5 -y clean all && \
     # 远程开发登录需要

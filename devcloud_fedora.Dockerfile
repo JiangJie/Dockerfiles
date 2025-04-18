@@ -45,13 +45,6 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 FROM scratch
 COPY --from=base / /
 
-ARG RUST_ROOT=/usr/local/rust
-
-# 一定要有rust的环境变量
-ENV RUSTUP_HOME=${RUST_ROOT}/rustup \
-    CARGO_HOME=${RUST_ROOT}/cargo \
-    PATH=${RUST_ROOT}/cargo/bin:/usr/local/node/bin:/usr/local/deno/bin:/usr/local/bun/bin:${PATH}
-
 WORKDIR /data/workspace
 
 # 这一行一定要有，否则会跑不起来

@@ -31,6 +31,9 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 FROM scratch
 COPY --from=base / /
 
+# ci可能不通过bash执行命令，所以需要显式设置环境变量
+ENV PATH=/usr/local/node/bin:/usr/local/deno/bin:/usr/local/bun/bin:${PATH}
+
 SHELL ["/bin/bash", "-c"]
 
 WORKDIR /data/landun/workspace

@@ -15,7 +15,7 @@ COPY env/mkpasswd.sh ${TMP_DIR}/
 COPY codev/bin/run /codev/bin/
 
 RUN dnf5 -y upgrade && \
-    dnf5 -y install which passwd wget openssh-server openssl-devel procps-ng jq tar xz zip unzip lsof vim nushell \
+    dnf5 -y install gawk which passwd wget openssh-server openssl-devel procps-ng jq tar xz zip unzip lsof vim nushell \
     # 安装必要软件包 git java .net golang gcc
     git git-lfs \
     java-latest-openjdk dotnet-sdk-9.0 golang gcc && \

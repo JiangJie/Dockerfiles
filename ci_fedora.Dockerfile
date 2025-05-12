@@ -9,7 +9,7 @@ COPY home/.pip/pip.conf ${HOME}/.pip/
 COPY profile.d/alias.sh profile.d/bun.sh profile.d/deno.sh profile.d/node.sh /etc/profile.d/
 
 RUN dnf5 -y upgrade && \
-    dnf5 -y install which wget openssl-devel procps-ng jq tar xz zip unzip lsof vim \
+    dnf5 -y install gawk which wget openssl-devel procps-ng jq tar xz zip unzip lsof vim \
     # 安装必要软件包 git java pip
     git git-lfs \
     java-latest-openjdk python3-pip && \

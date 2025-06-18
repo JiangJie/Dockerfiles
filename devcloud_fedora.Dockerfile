@@ -37,6 +37,9 @@ RUN dnf5 -y upgrade && \
     # 安装bun
     bash ${HOME}/bun_install.sh
 
+# nushell配置覆盖安装附带的默认文件
+COPY home/.config/nushell/config.nu ${HOME}/.config/nushell/
+
 # 设置时区
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 

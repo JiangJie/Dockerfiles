@@ -38,5 +38,10 @@
 	insteadOf = https://
 [core]
 	editor = code-insiders --wait
-[credential]
-	helper = store
+[core]
+	longpaths = true
+	symlinks = true
+	autocrlf = false
+	compression = 0
+[diff]
+	renameLimit = 1000000

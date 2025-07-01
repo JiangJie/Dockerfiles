@@ -37,6 +37,7 @@
 [url "ssh://git@"]
 	insteadOf = https://
 [core]
+    ignorecase = false
 	editor = code-insiders --wait
 [core]
 	longpaths = true

@@ -18,4 +18,4 @@ mv ${BUN_ROOT}/${TARGET} ${BUN_BIN} && \
 ln -s ${BUN_BIN}/bun ${BUN_BIN}/bunx && \
 rm -rf ${BUN_TMP}
 
-${BUN_BIN}/bun --version
+echo "bun version = $(${BUN_BIN}/bun --version)"
